@@ -25,7 +25,7 @@ grammar_cjkRuby: true
 			$	unzip dol_ethz.zip -d dol
 		3.解压systemc
 			$	tar -zxvf systemc-2.3.1.tgz
- #### 编译systemc
+#### 编译systemc
 		1.解压后进入systemc-2.3.1的目录下
 			$	cd systemc-2.3.1
 		2.新建一个临时文件夹objdir
@@ -39,20 +39,17 @@ grammar_cjkRuby: true
 		6.编译完后文件目录如下($ cd ..        $ ls)命令，能看到include, lib-linux64(对于32位系统，这里是lib-linux)
 		记录当前的工作路径(会输出当前所在路径，记下来，待会有用)
 			$	pwd
- #### 编译dol
+#### 编译dol
 		1.进入刚刚dol的文件夹
 			$	cd ../dol
 		2.修改build_zip.xml文件
-		找到下面这段话，就是说上面编译的systemc位置在哪里，
-		<property name="systemc.inc" value="YYY/include"/>
-		<property name="systemc.lib" value="YYY/lib-linux/libsystemc.a"/>
-		把YYY改成上页pwd的结果（注意，对于  64位 系统的机器，lib-linux要改成lib-linux64）
-
+			找到下面这段话，就是说上面编译的systemc位置在哪里，
+			<property name="systemc.inc" value="YYY/include"/>
+			<property name="systemc.lib" value="YYY/lib-linux/libsystemc.a"/>
+			把YYY改成上页pwd的结果（注意，对于  64位 系统的机器，lib-linux要改成lib-linux64）
 		3.然后是编译
 			$	ant -f build_zip.xml all
-		若成功会显示build successful
-
-
+			若成功会显示build successful
 #### 运行例子（检测是否安装成功）
 		1.接着可以试试运行第一个例子（检测是否安装成功）
 		进入build/bin/mian路径下
@@ -62,5 +59,3 @@ grammar_cjkRuby: true
 
 ### 实验感想
 	上次的实验Dol的安装按照TA大大给出的PPT来装还是比较简单的，主要是在修改build_zip文件时，要注意是否有写错，因为在这里浪费了很久时间。还有就是前面配置环境的时候要把需要的环境配置好（如javac等等）。
-
-  [1]: ./images/1476022596371.jpg "1476022596371.jpg"
